@@ -10,6 +10,9 @@
         android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
         android:name="android.permission.CAMERA" />
 
     <application
@@ -35,6 +38,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Add"/>
+        <activity android:name=".Quiz"/>
+        <activity android:name=".Database"/>
     </application>
 
 </manifest>

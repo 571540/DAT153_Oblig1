@@ -2,47 +2,58 @@ package com.example.dat153_oblig1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatabaseHelper databaseHelper;
-    QuizCamera quizCamera;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(Build.VERSION.SDK_INT >= 23){
-            requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 2);
-        }
-        Button btnCamera = (Button) findViewById(R.id.btnCamera);
-        btnCamera.setOnClickListener(new View.OnClickListener() {
+        Button btnAdd = findViewById(R.id.btnAdd);
+        Button btnDatabase = findViewById(R.id.btnDatabase);
+        Button btnQuiz = findViewById(R.id.btnQuiz);
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                onClickAdd();
             }
         });
 
-        Button btnDatabase = (Button) findViewById(R.id.btnDatabase);
         btnDatabase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                onClickDatabase();
             }
         });
 
-        Button btnQuiz = (Button) findViewById(R.id.btnQuiz);
-        btnDatabase.setOnClickListener(new View.OnClickListener() {
+        btnQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                onClickQuiz();
             }
         });
     }
+
+    public void onClickAdd(){
+        Intent intent = new Intent(this, Add.class);
+        startActivity(intent);
+    }
+
+    public void onClickDatabase(){
+        Intent intent = new Intent(this, Database.class);
+        startActivity(intent);
+    }
+
+    public void onClickQuiz(){
+        Intent intent = new Intent(this, Quiz.class);
+        startActivity(intent);
+    }
+
+
 }
