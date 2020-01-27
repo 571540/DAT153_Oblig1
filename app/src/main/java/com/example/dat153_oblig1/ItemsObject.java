@@ -1,16 +1,19 @@
 package com.example.dat153_oblig1;
 
+import android.graphics.Bitmap;
+import android.net.Uri;
+
 public class ItemsObject {
 
-    private byte image;
+    private Bitmap image;
     private String name;
 
-    public ItemsObject(byte image, String name){
+    public ItemsObject(Bitmap image, String name){
         this.image = image;
         this.name = name;
     }
 
-    public byte getImage() {
+    public Bitmap getImage() {
         return image;
     }
 
@@ -18,7 +21,7 @@ public class ItemsObject {
         return name;
     }
 
-    public void setImage(byte image) {
+    public void setImage(Bitmap image) {
         this.image = image;
     }
 

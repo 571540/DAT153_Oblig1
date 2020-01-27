@@ -1,6 +1,11 @@
 package com.example.dat153_oblig1;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,30 +14,54 @@ import java.util.ArrayList;
 
 public class Database extends AppCompatActivity {
 
-    ListView listView;
-
-
-
-
-
-    Integer[] images = {R.drawable.donald, R.drawable.cartman, R.drawable.homer, R.drawable.sonic, R.drawable.sonic};
-    String[] imageName = {"donald trump", "eric cartman", "homer simpson", "sonic", "mario"};
+    ListView databaseListView;
+    ArrayList<ItemsObject> mainList;
+    String[] imageName;
+    Bitmap[] images;
+    ItemsObject itemsObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.display_main_database);
+        setContentView(R.layout.display_database_image_adapter);
 
-        listView = (ListView) findViewById(R.id.databaseListView);
+        databaseListView = (ListView) findViewById(R.id.databaseListView);
         ImageAndTextAdapter imageAndTextAdapter = new ImageAndTextAdapter(this, imageName, images);
-        listView.setAdapter(imageAndTextAdapter);
+        databaseListView.setAdapter(imageAndTextAdapter);
+
+        databaseListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+            }
+        });
+
+        databaseListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                return false;
+            }
+        });
     }
 
-    private ArrayList<ItemsObject> populateList(){
+    private ArrayList<ItemsObject> initList(){
         ArrayList<ItemsObject> list = new ArrayList<>();
-        for(int i = 0; i < list.size(); i++){
-            ItemsObject itemsObject = new ItemsObject();
-            itemsObject.setImage();
+        Integer[] images = {R.drawable.donald, R.drawable.cartman, R.drawable.homer, R.drawable.sonic, R.drawable.mario};
+        String[] imageName = {"donald trump", "eric cartman", "homer simpson", "sonic", "mario"};
+
+        for(int i = 0; i < images.length; i++){
+            ItemsObject itemsObject = new ItemsObject(convertDrawableToBitmap(images[i]), imageName[i]);
+            list.add(itemsObject);
         }
+        return list;
     }
+
+    public Bitmap convertDrawableToBitmap(Integer image){
+        Drawable drawable = this.getResources().getDrawable(image);
+        Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+        return bitmap;
+    }
+
+
 }
