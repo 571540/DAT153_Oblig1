@@ -8,7 +8,6 @@ public class Quiz extends AppCompatActivity {
 
     ListView listView;
 
-
     protected void quizList(){
         listView = (ListView) findViewById(R.id.listView);
     }
