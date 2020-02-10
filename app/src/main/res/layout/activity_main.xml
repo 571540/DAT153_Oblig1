@@ -11,6 +11,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:weightSum="10"
+    android:background="@android:color/holo_blue_dark"
     >
 
 
@@ -18,33 +19,39 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
         android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
         android:text="The Name Quiz App"
-        android:textSize="36sp" />
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnQuiz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/background_dark"
+        android:text="Start Quiz"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/background_dark"
-        android:text="Add"
+        android:text="Add New Item"
         android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/btnDatabase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:background="@android:color/background_dark"
-        android:text="Database"
+        android:text="Go To Database"
         android:textColor="@android:color/white" />
 
-    <Button
-        android:id="@+id/btnQuiz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_dark"
-        android:text="Quiz"
-        android:textColor="@android:color/white" />
 
 </LinearLayout>

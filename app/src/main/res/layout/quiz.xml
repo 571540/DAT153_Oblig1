@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:weightSum="10">
+
+
+    <TextView
+        android:id="@+id/questionLabelTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        />
+
+
+    <TextView
+        android:id="@+id/whoIsThisTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="Who Is This?"
+        android:textSize="25sp"
+        />
+
+    <ImageView
+        android:id="@+id/quizImageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:background="#36A2A2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_add_image_default" />
+
+    <EditText
+        android:id="@+id/answerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Write Your Answer" />
+
+    <Button
+        android:id="@+id/btnSubmitAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:layout_marginBottom="10dp"
+        android:text="Submit"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnQuitQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_dark"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="left"
+            android:layout_weight="1"
+            android:text="Quit Quiz"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnRestartQuiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_dark"
+            android:layout_gravity="right"
+            android:layout_marginLeft="0dp"
+            android:layout_weight="1"
+            android:text="Restart"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:weightSum="10">
+
+    <Button
+        android:id="@+id/btnSavePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:layout_marginBottom="20dp"
+        android:text="Save To Database"
+        android:textColor="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/pictureImageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:adjustViewBounds="true"
+        android:background="#36A2A2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_add_image_default" />
+
+    <EditText
+        android:id="@+id/fullNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Give Full Name" />
+
+    <Button
+        android:id="@+id/btnTakePicture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Take Picture"
+        android:background="@android:color/background_dark"
+        android:textColor="@android:color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+        android:id="@+id/btnShowPictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="left"
+        android:layout_weight="1"
+        android:text="Open Gallary"
+        android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnOpenDatabase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_dark"
+            android:layout_gravity="right"
+            android:layout_marginLeft="0dp"
+            android:layout_weight="1"
+            android:text="Open Database"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</LinearLayout>

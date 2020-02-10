@@ -1,7 +1,6 @@
 package com.example.dat153_oblig1;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
 
 public class ItemsObject {
 

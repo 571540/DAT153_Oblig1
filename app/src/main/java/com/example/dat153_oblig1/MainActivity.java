@@ -15,18 +15,15 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     public static ArrayList<ItemsObject> quizList = new ArrayList<>();
+    public static boolean alreadyUploadedDB = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Integer[] images = {R.drawable.donald, R.drawable.cartman, R.drawable.homer, R.drawable.sonic, R.drawable.mario};
-        String[] imageName = {"donald trump", "eric cartman", "homer simpson", "sonic", "mario"};
-
-        for(int i = 0; i < images.length; i++){
-            ItemsObject itemsObject = new ItemsObject(convertDrawableToBitmap(images[i]), imageName[i]);
-            quizList.add(itemsObject);
+        if(alreadyUploadedDB == false){
+            addStartingPictures();
         }
 
         Button btnAdd = findViewById(R.id.btnAdd);
@@ -53,6 +50,17 @@ public class MainActivity extends AppCompatActivity {
                 onClickQuiz();
             }
         });
+    }
+
+    public void addStartingPictures(){
+        Integer[] images = {R.drawable.donald, R.drawable.cartman, R.drawable.homer, R.drawable.sonic, R.drawable.mario};
+        String[] imageName = {"donald trump", "eric cartman", "homer simpson", "sonic", "mario"};
+
+        for(int i = 0; i < images.length; i++){
+            ItemsObject itemsObject = new ItemsObject(convertDrawableToBitmap(images[i]), imageName[i]);
+            quizList.add(itemsObject);
+        }
+        alreadyUploadedDB = true;
     }
 
     public void onClickAdd(){

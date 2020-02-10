@@ -27,11 +27,11 @@ import java.util.ArrayList;
 
 public class Add extends AppCompatActivity {
 
-    String currentPhotoPath;
-    ImageView imageView;
-    Bitmap imageBitmap;
-    EditText fullName;
-    ArrayList<ItemsObject> addToDatabase = MainActivity.quizList;
+    private String currentPhotoPath;
+    private ImageView imageView;
+    private Bitmap imageBitmap;
+    private EditText fullName;
+    public static ArrayList<ItemsObject> addToDatabase;
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
     static final int PERMISSION_CODE = 1001;
@@ -40,11 +40,14 @@ public class Add extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.display_main_add);
+        setContentView(R.layout.add);
+
+        addToDatabase= MainActivity.quizList;
 
         Button btnCamera = findViewById(R.id.btnTakePicture);
         Button btnSavePicture = findViewById(R.id.btnSavePicture);
         Button btnShowPictures = findViewById(R.id.btnShowPictures);
+        Button btnOpenDatabase = findViewById(R.id.btnOpenDatabase);
 
         imageView = findViewById(R.id.pictureImageView);
 
@@ -62,7 +65,6 @@ public class Add extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 savePictureToDatabase(v);
-                galleryAddPic();
             }
         });
 
@@ -81,11 +83,18 @@ public class Add extends AppCompatActivity {
                 }
             }
         });
+
+        btnOpenDatabase.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Add.this, Database.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void pickImageFromGallary(){
         Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
-        intent.setType("image/*");
         startActivityForResult(intent, IMAGE_PICK_CODE);
     }
 
@@ -154,7 +163,8 @@ public class Add extends AppCompatActivity {
         }else{
             BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
             Bitmap bitmap = drawable.getBitmap();
-            addToDatabase.add(new ItemsObject(bitmap, fullName.getText().toString()));
+            addToDatabase.add(new ItemsObject(bitmap, fullName.getText().toString().toLowerCase()));
+            fullName.setText("");
             Toast.makeText(this, "Item was stored to the database", Toast.LENGTH_SHORT).show();
         }
     }
