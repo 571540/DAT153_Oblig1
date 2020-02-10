@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/pictureImageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:adjustViewBounds="true"
         android:background="#36A2A2"
         android:scaleType="centerCrop"
@@ -32,7 +32,7 @@
         android:id="@+id/fullNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         android:hint="Give Full Name" />
 
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Take Picture"
+        android:text="Take A Picture"
         android:background="@android:color/background_dark"
         android:textColor="@android:color/white" />
 

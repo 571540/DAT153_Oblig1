@@ -16,12 +16,14 @@
         android:id="@+id/questionLabelTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Question: 1/x"
         android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/scoreTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Score: 0"
         android:textSize="15sp"
         />
 
@@ -31,19 +33,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:textStyle="bold"
         android:text="Who Is This?"
         android:textSize="25sp"
         />
 
-    <ImageView
-        android:id="@+id/quizImageView"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:adjustViewBounds="true"
-        android:background="#36A2A2"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_add_image_default" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/quizImageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            android:background="#36A2A2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_add_image_default" />
+
+        <ImageView
+            android:id="@+id/correctAnswerImageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_correct_answer" />
+
+        <ImageView
+            android:id="@+id/wrongAnswerImageView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_wrong_answer" />
+
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/answerEditText"
